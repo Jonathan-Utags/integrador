@@ -36,7 +36,8 @@ const app = express();
         edad: body.edad,
         curp: body.curp,
         telefono: body.telefono,
-        email: body.email,
+        mail: body.mail,
+        activo: body.activo
     }); 
 
     usr.save((err, usrDB) => {

@@ -23,11 +23,11 @@ let empleadoSchema = new Schema({
         requiere: [true, 'Este campo es necesario'],
     },
     hora_entrada:{
-        type: Number,
+        type: String,
         requiere: [true, 'La hora es necesaria'],
     },
     hora_salida:{
-        type: Number,
+        type: String,
         requiere: [true, 'La hora es necesaria'],
     },
     activo:{

@@ -35,6 +35,7 @@ app.get('/departamento', function (req, res) {
         nombre: body.nombre,
         numero_empleados: body.numero_empleados,
         extencion_telefonica: body.extencion_telefonica,
+        
     }); 
 
     dap.save((err, dapDB) => {

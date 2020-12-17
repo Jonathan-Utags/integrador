@@ -19,7 +19,7 @@ app.use(require('./routes/usuario'));
 app.use(require('./routes/departamento'));
 app.use(require('./routes/empleado'));
 
- mongoose.connect('mongodb+srv://admin:3526@cluster0.4pvv9.mongodb.net/Empresa',{
+ mongoose.connect('mongodb+srv://admon:1q2w3e@cluster0.irihh.mongodb.net/Empresa',{
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,
