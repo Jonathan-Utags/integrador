@@ -1,6 +1,6 @@
 const express = require('express');
 const _ = require ('underscore');
-const Usuario = require('../models/departamento');
+const Departamento = require('../models/departamento');
 const app = express();
 
 
