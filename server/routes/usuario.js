@@ -1,5 +1,4 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
 const _ = require ('underscore');
 const Usuario = require('../models/usuario');
 const app = express();
@@ -7,7 +6,7 @@ const app = express();
   app.get('/usuario', function (req, res) {
     let desde = req.query.desde || 0;
     let hasta = req.query.hasta || 100;
-    Usuario.find({ estado: true })
+    Usuario.find({ activo: true })
     .skip(Number(desde))
     .limit(Number(hasta))
     .exec((err,usuarios) => {
@@ -35,8 +34,9 @@ const app = express();
         primer_apellido: body.primer_apellido,
         segundo_apellido: body.segundo_apellido,
         edad: body.edad,
+        curp: body.curp,
+        telefono: body.telefono,
         email: body.email,
-        password: bcrypt.hashSync(body.password, 10)
     }); 
 
     usr.save((err, usrDB) => {
@@ -58,7 +58,7 @@ const app = express();
   
   app.put('/usuario/:id', function (req, res){
     let id = req.params.id;
-    let body = _.pick(req.body, ['nombre','email']);
+    let body = _.pick(req.body, ['nombre','primer_apellido','segundo_apellido','curp','telefono']);
 
     Usuario.findByIdAndUpdate(id , body , 
     { new:true, runValidators:true, context:'query'},
